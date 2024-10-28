@@ -1,0 +1,178 @@
+.booking-form {
+    font-family: 'Merriweather', serif;
+    max-width: 540px;
+    margin: 40px auto;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Form fields */
+  .booking-form input,
+  .booking-form textarea,
+  .booking-form select {
+    font-size: 18px;
+    padding: 0 28px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(233,233,233);
+    text-align: left;
+    border-radius: 35px;
+    color: #000000;
+    letter-spacing: normal;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'Merriweather', serif;
+    background: #fff;
+  }
+  
+  .booking-form select {
+    background: url('https://seashineadventures.com/wp-content/uploads/2017/08/grey-chevron.png') no-repeat;
+    -webkit-appearance: none;
+    appearance: none;
+    background-size: 15px;
+    background-position: 97% 50%;
+  }
+  
+  .booking-form textarea {
+    height: 120px;
+    line-height: 1.5;
+    padding: 15px 28px;
+  }
+  
+  .booking-form input:focus,
+  .booking-form textarea:focus,
+  .booking-form select:focus {
+    outline: 0;
+    border: 1px solid rgb(211,211,211);
+  }
+  
+  .booking-form label {
+    font-size: 18px;
+    font-weight: 300;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Buttons */
+  .next-btn,
+  .submit-btn {
+    background: #3A1078;
+    padding: 13px 20px;
+    color: #fff;
+    font-family: oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    min-width: 400px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 0;
+    border: 0;
+    transition: background-color 0.5s;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .next-btn:hover,
+  .submit-btn:hover {
+    background-color: #444b5d;
+    color: #fff;
+  }
+  
+  /* Progress Bar */
+  .progress-wrap {
+    margin: auto;
+    display: table;
+    margin-bottom: 40px;
+  }
+  
+  .line-progress-bar {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    position: relative;
+  }
+  
+  .Bookingline {
+    height: 1px;
+    width: 250px;
+    border-bottom: 1px solid rgb(217, 217, 217);
+    position: absolute;
+    margin-top: 8px;
+  }
+  
+  .progress-dots ul {
+    display: flex;
+    width: 250px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .progressbar-dots {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #d4d4d4;
+    font-size: 20px;
+    background: rgb(217, 217, 217);
+  }
+  
+  .progressbar-dots span {
+    font-size: 12px;
+    line-height: 12px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -30px;
+    display: none;
+  }
+  
+  .progressbar-dots.active {
+    color: #fff;
+    background: #3A1078;
+  }
+  
+  /* Tab Panes */
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+  
+  /* Error Messages */
+  .error {
+    font-size: 12px;
+    font-family: "helvetica neue", arial, sans-serif;
+    color: #D6041D;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  /* Success Message */
+  .success-message {
+    text-align: center;
+    padding: 40px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  
+  .success-message p {
+    font-size: 18px;
+    line-height: 1.6;
+  }

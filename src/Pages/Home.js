@@ -5,8 +5,8 @@ import {Link}from 'react-router-dom';
 import Footer from "../Components/Footer"
 
 // importing pictures
-import Natural  from "../Components/Gallery/2359db7dfbdb7727aeb675861117c09d.jpg";
-import Relaxed from "../Components/Gallery/09936b30b5a82b1bb5cd41ffc6e573eb.jpg";
+import Natural  from "../Components/Gallery/natural.jpg";
+import Relaxed from "../Components/Gallery/relaxed.jpg";
 import Protect from "../Components/Gallery/free-photo-of-portrait-of-a-woman.jpeg";
 import Shampoo from "../Components/Gallery/istockphoto-1321544366-612x612.png"
 

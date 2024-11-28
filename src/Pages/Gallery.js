@@ -1,33 +1,26 @@
 import React from 'react';
 import Footer from "../Components/Footer"
 
+import UniGallery from '../Components/OurGALLERY/OurGallery';
+
 const Gallery = () => {
   return (
-    <div>
+    <>
+    <div className='Gallery-Container'>
 
-       <div className="ourSpace">
+         
 
-        <h1>Our Space</h1>
-
-       </div>
-
-       <div className="ourProducts">
-
-       <h1>Products</h1>
-
-       </div>
-
-       <div className="tutorials">
-
-       <h1>DIY</h1>
-
-       </div>
-
+     
+         <h1 className='gallery-heading'>Explore</h1>
+         <div>
+         <UniGallery />
+         </div>
+    </div>
        {/* footer */}
-     <div className="fooot">
+       <div className="fooot">
       <Footer/>
      </div>
-    </div>
+    </>
   )
 }
 

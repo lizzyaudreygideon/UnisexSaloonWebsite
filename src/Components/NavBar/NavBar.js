@@ -7,7 +7,7 @@ import { useState } from 'react';
 import {SidebarData} from './NavBarData';
 import { IconContext } from 'react-icons';
 import logo from '../Gallery/Untitled_design-removebg-preview.png';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 
 function NavBar() {
 
@@ -17,7 +17,7 @@ function NavBar() {
 
     const [navbar, setNavbar] = useState(false);
 
-    const location = useLocation();
+    // const location = useLocation();
 
     const changeBackground = () => {
         if (window.scrollY >= 80) {
@@ -29,13 +29,13 @@ function NavBar() {
 
     window.addEventListener('scroll', changeBackground);
 
-    const hideLogo = () => {
-        // Check if current path matches '/contact'
-        if (location.pathname === '/contact') {
-            return { display: 'none' }; // or any other style you want
-        }
-        return {}; // return empty object for default styling
-    };
+    // const hideLogo = () => {
+    //     // Check if current path matches '/contact'
+    //     if (location.pathname === '/contact' || '/gallery') {
+    //         return { display: 'none' }; // or any other style you want
+    //     }
+    //     return {}; // return empty object for default styling
+    // };
 
   return (
 
@@ -49,7 +49,7 @@ function NavBar() {
           <span onClick={showSidebar} >Menu </span>
         </Link>
 
-        <div style={hideLogo()}>
+        <div >
 
           <Link to='/'>
              <img src={logo} alt="" className="logo" />

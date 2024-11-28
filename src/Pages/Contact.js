@@ -12,7 +12,7 @@ const Contact = () => {
                 <div class="container">
                     {/* <p class="h2-bottom">Our mandate is to leave you satisfied</p>
                      */}
-                    <h2>contact us</h2>
+                    <h2>Contact us</h2>
                    
                     <div class="social">
                        <Link to='#' className='soci'> <FaIcons.FaFacebookF/> </Link>

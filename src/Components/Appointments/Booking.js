@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import './BookingForm.css';  // We'll create this CSS file next
+import { db } from '../firebaseConfig'; //  Firebase config file
+import { collection, addDoc } from 'firebase/firestore';
+import './BookingForm.css';
+import { Link } from 'react-router-dom';
 
 const BookingForm = () => {
   const [step, setStep] = useState(1);
@@ -13,6 +16,7 @@ const BookingForm = () => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -24,7 +28,6 @@ const BookingForm = () => {
     if (step === 2) {
       if (!formData.date) newErrors.date = 'Please select a date';
       if (!formData.timeOfDay) newErrors.timeOfDay = 'Please select time of day';
-      
     }
     
     if (step === 3) {
@@ -54,10 +57,26 @@ const BookingForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setIsSubmitted(true);
+      try {
+        setIsLoading(true);
+        // Add the booking to Firestore
+        const bookingsCollection = collection(db, 'bookings');
+        await addDoc(bookingsCollection, {
+          ...formData,
+          createdAt: new Date(),
+          status: 'pending'
+        });
+
+        setIsSubmitted(true);
+      } catch (error) {
+        console.error('Error submitting booking:', error);
+        alert('Failed to submit booking. Please try again.');
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -65,9 +84,10 @@ const BookingForm = () => {
     return (
       <div className="success-message">
         <p>
-          Your message was sent successfully. Thanks! We'll be in touch as soon as we can, 
-          which is usually like lightning (Unless we're sailing or eating tacos!).
+          Your booking request was sent successfully. Thanks! We'll be in touch as soon as we can, 
+          which is usually like lightning :).
         </p>
+        <Link to="/">Back To Home</Link>
       </div>
     );
   }
@@ -94,7 +114,7 @@ const BookingForm = () => {
       </div>
 
       <form>
-        {/* Step 1 */}
+        {/* Step 1 -  */}
         <div className={`tab-pane ${step === 1 ? 'active' : ''}`}>
           <div className="form-group">
             <label>How many are you?</label>
@@ -116,7 +136,7 @@ const BookingForm = () => {
           </button>
         </div>
 
-        {/* Step 2 */}
+        {/* Step 2  */}
         <div className={`tab-pane ${step === 2 ? 'active' : ''}`}>
           <div className="form-group">
             <label>Which date and time are you looking to book on?</label>
@@ -143,8 +163,6 @@ const BookingForm = () => {
             </select>
             {errors.timeOfDay && <span className="error">{errors.timeOfDay}</span>}
           </div>
-
-          
 
           <button type="button" className="next-btn" onClick={nextStep}>
             Next
@@ -173,7 +191,7 @@ const BookingForm = () => {
               onChange={handleChange}
             />
             {errors.email && <span className="error">{errors.email}</span>}
-          </div>
+          </div> 
 
           <div className="form-group">
             <label>Do you have any questions or a message? (Optional)</label>
@@ -184,8 +202,13 @@ const BookingForm = () => {
             />
           </div>
 
-          <button type="button" className="submit-btn" onClick={handleSubmit}>
-            Make a Booking
+          <button 
+            type="button" 
+            className="submit-btn" 
+            onClick={handleSubmit}
+            disabled={isLoading}
+          >
+            {isLoading ? 'Submitting...' : 'Make a Booking'}
           </button>
         </div>
       </form>

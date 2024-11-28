@@ -47,7 +47,7 @@ const Footer = () => {
 
          <div className="foot4">
         <h2>Stay in the know</h2>
-        <p>To stay in the loop of A4's workshops, tutorials,discounts and hair care tips, sign up for our Newsletter here!</p>
+        <p>To stay in the loop of UniSex workshops, tutorials,discounts and hair care tips, sign up for our Newsletter here!</p>
          <span className="coms">
            <label>
              <input type="email" placeholder='Email Adress' />
@@ -63,7 +63,7 @@ const Footer = () => {
       <div className="line"></div>
 
       <div className="foot5">
-         <p>Ⓒ A4 Hair Saloon, 2024 | All Rights Reserved </p>
+         <p>Ⓒ Unisex Hair Saloon, 2024 | All Rights Reserved </p>
          <p>@uleezProducts | Terms & Conditions | Privacy Policy </p>
       </div>
      </div>

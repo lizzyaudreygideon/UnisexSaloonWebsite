@@ -132,37 +132,33 @@ li {
 
 
 /* navigation */
-
-.navbar{
-  background:  transparent;
+.navbar {
+  background: transparent;
   height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   position: fixed;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
-  
+  top: 0;
+  z-index: 1000;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.navbar.active{
+.navbar.active {
   background: #3A1078;
 }
 
-
-.menu-bars{
+.menu-bars {
   margin-left: 10px;
-  font-size: 2rem; 
+  font-size: 2rem;
   background: none;
   cursor: pointer;
   font-weight: 700;
 }
 
 .nav-menu {
-  background-color:  #4d31aad2;
-  
+  background-color: #4d31aad2;
   width: 258px;
   height: 100vh;
   display: flex;
@@ -170,16 +166,16 @@ li {
   position: fixed;
   top: 0;
   left: -100%;
-  transition: all 3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 1000;
 }
 
 .nav-menu.active {
   left: 0;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-text{
+.nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -188,10 +184,10 @@ li {
   height: 60px;
 }
 
-.nav-text a{
+.nav-text a {
   text-decoration: none;
   color: #F8F9FA;
-  font-size: 18px;
+  font-size: 1rem;
   width: 95%;
   height: 100%;
   display: flex;
@@ -200,7 +196,7 @@ li {
   border-radius: 4px;
 }
 
-.nav-menu-items{
+.nav-menu-items {
   width: 100%;
   padding: 0;
   margin-top: 0;
@@ -215,22 +211,16 @@ li {
   align-items: center;
 }
 
-span{
+span {
   margin-left: 16px;
   color: #F8F9FA;
-  
 }
 
-.navbar span{
-  font-size: 16px;
-  
-}
-    
 .logo {
-    height: 80px;
-    width: 80px;
-    object-fit: contain;
-    margin: auto;
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+  margin: auto;
 }
 
 .textbox {
@@ -241,26 +231,77 @@ span{
   align-items: center;
   justify-content: center;
   border-radius: 4px;
- 
 }
 
 .textbox > .text {
-  font-size: 16px;
- 
+  font-size: 1rem;
   color: #3A1078;
 }
 
-.textbox :hover{
+.textbox:hover {
   background-color: #3A1078;
 }
 
-  .icons:hover{
+.textbox .text:hover {
+  color: #F8F9FA;
+}
+
+.icons:hover {
   fill: #FFD700;
 }
 
-.textbox .text:hover{
-  color: #F8F9FA;
+/* Responsive design */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .menu-bars {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .textbox {
+    margin: 0 10px;
+  }
+
+  .textbox > .text {
+    font-size: 14px;
+  }
 }
+
+@media (max-width: 480px) {
+  .menu-bars {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .textbox {
+    margin: 0 5px;
+  }
+
+  .textbox > .text {
+    font-size: 12px;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-text a {
+    font-size: 16px;
+  }
+}
+
 /* banner */
 
 .Home{
@@ -667,7 +708,7 @@ padding: 10px;
     
     width: 200%; /* Double the width to accommodate duplicate slides */
     height: 100%;
-    animation: carousel 10s linear infinite; /* Adjust timing as needed */
+    animation: carousel 10s linear infinite; /* timing as needed */
   }
   
   .carousel-slide {
@@ -740,10 +781,15 @@ padding: 10px;
  background-color: #0d0d0e1f;
  
   }
+
+  .whole p{
+    color: black;
+  }
   .services{
     display: grid;
     place-self: center;
    padding: 100px 0px 40px 0px;
+   
   }
 
   .hero-section{
@@ -1025,116 +1071,58 @@ cursor: pointer
   transition: 1s ease-in-out;
   color: transparent;
 }
-/* ----------- start media query for video & contact ----*/
-@media only screen and (max-width: 575px) {
-  .video .overlay {
-      padding-top: 40px;
-  }
-  .video .overlay .social {
-      margin-top: 30px;        
-      
-  }
-  .video .overlay .social .soci {
-      width: 40px;
-      height: 40px;
-      font-size: 20px;
-      line-height: 40px;
-  }
-  .video .overlay form {
-      width: 90%;
-      margin: 40px auto 0;
-      flex-direction: column;
-      align-items: center;
-  }
-  .video .overlay form input {
-      width: 95% !important;
-      margin-bottom: 15px !important;
-  }
-  .video .overlay form textarea {
-      width: 95%;
-      margin-top: 15px;
-  }
-  .video .overlay form button {
-      width: 95%;
-  }
-}
-@media (min-width: 576px) and (max-width: 991px) {
-  
-  .video .overlay form {
-      width: 90%;
-      margin: 60px auto 0;
-  }
-  .video .overlay form [name="name"],
-  .video .overlay form [name="email"] {
-      width: 48%;
-  }
-  .video .overlay form [name="phone"]{
-  /* .video .overlay form [name="website"] { */
-      width: 48%;
-      margin-bottom: 30px;
-  }
-  .video .overlay form [name="subject"] {
-      width: 100%;
-  }
-  
-}
 
 /* gallery */
 
- .gallery {
+.gallery { 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  max-width: 1200px;
-  width: 2000px;
-  margin:  auto;
+  align-items: center;
+  max-width: 1000px; 
+  margin: 0 auto;
+  gap: 16px; 
+  padding: 16px; 
 }
 
-
-
-.gallery-item img, .gallery-item iframe, .gallery-item video {
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
+.gallery-item img, 
+.gallery-item iframe, 
+.gallery-item video {
+  width: 280px; 
+  height: 280px;
+  object-fit: cover; 
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.Gallery-Container {
- padding: 20px;
-  background-image: url('../src/Components/Gallery/elevated-view-professional-camera-lens-colored-background.jpg');
-  background-position: center;
-  background-size: cover;
- 
-}
-
-.gallery-heading{
-  margin: 100px 0px 20px 0px;
+.gallery-heading {
+  text-align: center;
+  margin: 90px 0 20px;
+  font-size: 1.8rem; 
+  color: #333; 
 }
 
 .gallery-video {
-  width: 350px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
-/* Play video on hover */
-.gallery-item:hover .gallery-video {
-  transform: scale(1.05); /* Slight zoom effect */
+.gallery-item:hover img, 
+.gallery-item:hover iframe, 
+.gallery-item:hover video {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
-.gallery-video:hover {
-  cursor: pointer;
+.Gallery-Container {
+  padding: 20px;
+  background-image: url('../src/Components/Gallery/elevated-view-professional-camera-lens-colored-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+ 
 }
 
-/* You can also add fade-in effect */
-.gallery-item:hover .gallery-video {
-  opacity: 1;
-} 
 
 /* Products */
 .products-container {
@@ -1187,4 +1175,590 @@ color: #ccc;
 
 .product-hearding{
   margin: 80px 0px 0px 0px;
+}
+
+
+/* Media Queries */
+
+/* Extra small devices (phones) */
+@media screen and (max-width: 480px) {
+  .naration {
+    width: 100%;
+    color: #F8F9FA;
+    font-weight: 500;
+    float: right;
+    position: relative;
+    top: 30%;
+    margin: 0px;
+    padding: 0px 20px;
+    background-color: #08080847;
+    border-radius: 4px;
+}
+
+.naration h1 {
+    text-align: justify;
+    color: #F8F9FA;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.naration p {
+    font-size: 15px;
+}
+.home{
+  flex-direction: column;
+  padding: 40px;
+}
+
+.home .home1 {
+  width: 100%;
+}
+.home .home1 h1 {
+    font-size: 20px;
+    text-align: justify;
+    margin: 40px 0px;
+}
+
+.home .home1  p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.home .home2 img {
+    width: 100%;
+    height: 45vh;
+    border-radius: 4px;
+    /* height: 300px; */
+    object-fit: contain;
+}
+.hair-care-regimen{
+  padding: 0px;
+}
+.hair-care-regimen > h1 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.hair-care-regimen > .care {
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hair-care-regimen > .care > span {
+  width: 70%;
+  text-align: center;
+  position: relative;
+  margin-left: 0px;
+}
+
+.hair-care-regimen > .care > span > .regimen {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+    top: 15px;
+    left: 20px;
+    margin: 0px 0px 20px 0px;
+    border-radius: 4px;
+}
+
+.footer {
+    background-color: #4d31aa48;
+    width: 100%;
+    /* height: 100vh; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer .bet2{
+  flex-direction: column;
+}
+
+.footer > .bet2 > .foot2, .footer > .bet2 > .foot3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer > .bet2 >.foot4 {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footer > .bet2 > .foot4 > .coms > label > input {
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border: solid 2px #3A1078;
+    background-color: #F8F9FA;
+    text-align: center;
+    margin:  5px;
+}
+
+/* about */
+
+.WhyUs {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* height: 100vh; */
+  padding: 30px;
+  margin: 0px;
+  position: relative;
+}
+
+.why {
+  width: 100%;
+  height: 80vh;
+  margin: 0px;
+}
+
+.WhyUs .why h3, .WhyUs .why h6 {
+  font-size: 20px;
+  margin: 30px 0px;
+}
+
+.why p {
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.us {
+  padding: 30px;
+  width: 100%;
+  height: 53vh;
+  position: relative;
+}
+
+.us .manImage {
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+  height: 26vh;
+  top: 61%;
+  right: 17%;
+  border-radius: 4px;
+}
+
+.text3 {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(40.11% - 0px);
+  height: 100%;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pictures {
+  margin: 0px;
+}
+
+/* services */
+
+.card-grid {
+  display: grid;
+  grid-template-rows: repeat(1, 2fr);
+  grid-template-columns: repeat(1, 0fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 24px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+ /* services */
+ .services {
+  padding: 60px 16px 20px; 
+  text-align: center;
+  width: 100%;
+}
+
+.hero-section {
+  flex-direction: column; 
+  align-items: center; 
+  padding: 32px 16px;
+}
+
+.card-grid {
+  grid-template-columns: 1fr; 
+  gap: 16px; 
+}
+
+.cardprice {
+  flex-direction: column; 
+  align-items: center;
+  margin: 16px 0;
+}
+
+.priceText {
+  width: 100%; 
+  padding: 16px; 
+  text-align: center; 
+}
+
+.card {
+  width: 100%; 
+  height: auto; 
+  margin: 0 auto;
+}
+
+.card__heading {
+  font-size: 1.2rem; 
+}
+
+.cta {
+  font-size: 0.9rem; 
+  padding: 8px 16px;
+}
+
+/* gallery */
+
+.gallery {
+  flex-direction: column; 
+  align-items: center;
+}
+
+.gallery-item img, 
+.gallery-item iframe, 
+.gallery-item video {
+  width: 200px; 
+  height: 200px;
+}
+
+ /* booking */
+
+form .next-btn, .submit-btn {
+  background: #3A1078;
+  padding: 13px 20px;
+  color: #fff;
+  font-family: oswald, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  min-width: 345px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 0;
+  border: 0;
+  transition: background-color 0.5s;
+  width: 100%;
+  cursor: pointer;
+}
+
+
+
+/* contact */
+.video .overlay h2 {
+  text-transform: uppercase;
+  font-size: 35px;
+  color: white;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.video .overlay {
+  padding-top: 40px;
+}
+
+.video .overlay .social {
+  margin-top: 30px;        
+  
+}
+.video .overlay .social .soci {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+}
+.video .overlay form {
+  width: 90%;
+  margin: 40px auto 0;
+  flex-direction: column;
+  align-items: center;
+}
+.video .overlay form input {
+  width: 95% !important;
+  margin-bottom: 15px !important;
+}
+.video .overlay form textarea {
+  width: 95%;
+  margin-top: 15px;
+}
+.video .overlay form button {
+  width: 95%;
+}
+
+/* products */
+
+.products-container .products-grid .product-card {
+  width: 90%;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+  padding: 12px ;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+select {
+  word-wrap: normal;
+  width: 50%;
+}
+
+.product-image {
+  max-width: 296px;
+  height: 259px;
+  border-radius: 4px;
+}
+
+}
+
+/* Small devices (smartphones and small tablets) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .hair-care-regimen > .care {
+    flex-direction: column;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+  /* services */
+
+  /* gallery */
+
+  .gallery {
+    gap: 12px; /* Reduce spacing on smaller screens */
+  }
+
+  .gallery-item img, 
+  .gallery-item iframe, 
+  .gallery-item video {
+    width: 220px; 
+    height: 220px;
+  }
+
+  .gallery-heading {
+    font-size: 1.5rem; 
+  }
+  
+ /* contact */
+ .video .overlay form {
+  width: 90%;
+  margin: 60px auto 0;
+}
+.video .overlay form [name="name"],
+.video .overlay form [name="email"] {
+  width: 48%;
+}
+.video .overlay form [name="phone"]{
+/* .video .overlay form [name="website"] { */
+  width: 48%;
+  margin-bottom: 30px;
+}
+.video .overlay form [name="subject"] {
+  width: 100%;
+}
+
+
+
+}
+
+/* Medium devices (tablets and small laptops) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  /* banner */
+
+  .Home {
+    width: 100%;
+    height: 75vh;
+    background-image: url(../src/Components/Gallery/Banner.jpeg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #F8F9FA;
+}
+
+.home {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 80px 0px;
+  width: 100%;
+}
+
+.home .home1 {
+  width: 80%;
+  margin: 10px;
+}
+
+.home .home2 img {
+  width: 100%;
+  height: 63vh;
+  border-radius: 4px;
+  /* height: 300px; */
+  object-fit: contain;
+}
+
+  .naration {
+    width: 62%;
+    color: #F8F9FA;
+    font-weight: 500;
+    float: right;
+    position: relative;
+    top: 30%;
+    margin: 10px;
+    padding: 0px 20px;
+    background-color: #08080813;
+    border-radius: 4px;
+}
+  .hair-care-regimen > .care {
+    flex-direction: column;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer > .bet2 > .foot4 > .coms > label > input {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  border: solid 2px #3A1078;
+  background-color: #F8F9FA;
+  text-align: center;
+  /* margin: 0px 5px; */
+}
+
+/* about */
+
+.why {
+  width: 90%;
+  height: 80vh;
+  /* margin: 0px 80px; */
+}
+
+.why p {
+  width: 100%;
+  margin: 30px 0px;
+}
+
+.WhyUs {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+  margin: 40px 0px;
+  position: relative;
+}
+
+.carousel-slide {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(20.11% - 20px);
+  height: 100%;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  
+ /* services */
+ .services {
+  padding: 60px 16px 20px; 
+  text-align: center;
+  width: 100%;
+}
+
+.hero-section {
+  flex-direction: column; 
+  align-items: center; 
+  padding: 32px 16px;
+}
+
+.card-grid {
+  grid-template-columns: 1fr; 
+  gap: 16px; 
+}
+
+.cardprice {
+  flex-direction: column; 
+  align-items: center;
+  margin: 16px 0;
+}
+
+.priceText {
+  width: 100%; 
+  padding: 16px; 
+  text-align: center; 
+}
+
+.card {
+  width: 100%; 
+  height: 40vh; 
+  margin: 0 auto;
+}
+
+.card__heading {
+  font-size: 1.2rem; 
+}
+
+.cta {
+  font-size: 0.9rem; 
+  padding: 8px 16px;
+}
+
+/* booking */
+
+.book {
+  height: 75vh;
+  width: 100%;
+  border-radius: 4px;
+  background-image: url(../src/Components/Gallery/booking.png);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+}
+
+
+}
+
+/* Large devices (laptops and desktops) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  /* Laptop and desktop styles */
+}
+
+/* Extra large devices (large desktops and monitors) */
+@media screen and (min-width: 1441px) {
+  /* Large screen styles */
 }

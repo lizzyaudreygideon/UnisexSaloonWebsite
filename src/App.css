@@ -222,6 +222,133 @@ span {
   object-fit: contain;
   margin: auto;
 }
+/* cart */
+.cart-summary {
+  position: fixed; 
+  top: 101px;
+  right: 15px;
+  background-color: #ffffff; 
+  color: #3A1078; 
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  z-index: 1000; 
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cart-summary .cart-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.cart-summary:hover {
+  transform: scale(1.05); 
+  opacity: 0.9;
+}
+
+
+/* cart page */
+
+.cart-page {
+  padding: 80px 20px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../src/Components/Gallery/Hair3D.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-page h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3A1078; /* Match your theme */
+  text-align: center;
+}
+
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.cart-item-details h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.remove-button {
+  background-color: #FF9800; /* Accent color */
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #E57A00;
+}
+
+.cart-page h2 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  text-align: center;
+  color: #3A1078; /* Theme color */
+}
+
+.continue-shopping-button {
+  display: block;
+  text-align: center;
+  background-color: #3A1078; /* Theme color */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 20px auto 0;
+  max-width: 200px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.continue-shopping-button:hover {
+  background-color: #2F4F7F;
+  transform: scale(1.05);
+}
+
 
 .textbox {
   margin: 0px 20px;

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 
 // Importing components
+import Loader from './Components/Loader/Loader';
 import Services from './Pages/Services';
 import Appointments from './Pages/Appointments';
 import Gallery from './Pages/Gallery';
@@ -17,6 +18,7 @@ import CartPage from './Components/Products/CartPage';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleAddToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -26,6 +28,28 @@ function App() {
   const handleRemoveFromCart = (index) => {
     setCart((prevCart) => prevCart.filter((_, i) => i !== index));
   };
+
+  // React Router hooks for navigation detection
+ 
+  const location = useLocation();
+
+  // Handle loader on initial load and route changes
+  useEffect(() => {
+    setLoading(true); // Show loader on navigation start
+    const timer = setTimeout(() => setLoading(false), 1500); // Simulate a delay of 1.5 seconds
+    return () => clearTimeout(timer);
+  }, [location.pathname]); // Triggered on route change
+
+  // Initial page load logic
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500); // Simulate a delay of 1.5 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <>
       <div className="main">
@@ -45,8 +69,10 @@ function App() {
               path="/products"
               element={<Products products={sampleProducts} onAddToCart={handleAddToCart} />}
             />
-            <Route path="/cart" 
-            element={<CartPage cart={cart} onRemoveFromCart={handleRemoveFromCart} />} />
+            <Route
+              path="/cart"
+              element={<CartPage cart={cart} onRemoveFromCart={handleRemoveFromCart} />}
+            />
             <Route path="/aboutMore" element={<AboutMore />} />
           </Routes>
         </div>

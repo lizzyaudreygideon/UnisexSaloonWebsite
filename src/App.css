@@ -1338,9 +1338,10 @@ color: #ccc;
   margin: 80px 0px 0px 0px;
 }
 
+
 /* animations  */
 
-/* Define keyframes for animations */
+/*  keyframes for animations */
 @keyframes fadeIn {
   from {
     opacity: 0;

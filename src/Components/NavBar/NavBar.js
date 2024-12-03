@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { FaPersonWalkingArrowRight } from 'react-icons/fa6';
 import { SidebarData } from './NavBarData';
 import { IconContext } from 'react-icons';
-import logo from '../Gallery/Untitled_design-removebg-preview.png';
+import logo from '../Gallery/favicon.png';
 
 function NavBar({ cart }) { // Accept cart as a prop
   const [sidebar, setSidebar] = useState(false);

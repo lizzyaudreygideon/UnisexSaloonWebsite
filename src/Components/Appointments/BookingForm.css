@@ -176,3 +176,26 @@
     font-size: 18px;
     line-height: 1.6;
   }
+
+  /* booking */
+  @media screen and (max-width: 480px) {
+form .next-btn, .submit-btn {
+  background: #3A1078;
+  padding: 13px 20px;
+  color: #fff;
+  font-family: oswald, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  min-width: 345px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 0;
+  border: 0;
+  transition: background-color 0.5s;
+  width: 100%;
+  cursor: pointer;
+}
+  }

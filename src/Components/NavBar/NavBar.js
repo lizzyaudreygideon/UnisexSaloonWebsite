@@ -25,7 +25,7 @@ function NavBar({ cart }) { // Accept cart as a prop
 
   // Calculate total items and cost
   const totalItems = cart.length;
-  const totalCost = cart.reduce((total, item) => total + item.price, 0);
+  
 
   return (
     <>
@@ -51,11 +51,12 @@ function NavBar({ cart }) { // Accept cart as a prop
          
         </div>
          {/* Cart Summary */}
-         <div className="cart-summary">
-              <Link to="/cart" className="cart-link">
-                🛒 Items: {totalItems} | Total: ${totalCost.toFixed(2)}
-              </Link>
-          </div>
+          <div className="cart-summary">
+        <Link to="/cart" className="cart-link">
+          🛒<span className="cart-counter">{totalItems}</span>
+        </Link>
+        </div>
+
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className="nav-menu-items" onClick={showSidebar}>

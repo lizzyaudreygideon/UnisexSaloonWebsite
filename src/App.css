@@ -1338,6 +1338,74 @@ color: #ccc;
   margin: 80px 0px 0px 0px;
 }
 
+/* animations  */
+
+/* Define keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply animations for desktop screens only */
+@media (min-width: 1024px) {
+  .navbar {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .cart-summary {
+    animation: zoomIn 0.8s ease-in-out;
+  }
+
+  .home,
+  .about,
+  .WhyUs,
+  .services,
+  .footer,
+  .hair-care-regimen,
+  .aboutUs {
+    animation: fadeIn 1.2s ease-in-out;
+  }
+
+  .home .home1,
+  .about .text1,
+  .WhyUs .why,
+  .services .hero-section {
+    animation: slideInFromLeft 1s ease-in-out;
+  }
+
+  .home .home2 img,
+  .about .pic1,
+  .WhyUs .us .womanImage {
+    animation: zoomIn 1.5s ease-in-out;
+  }
+}
+
 
 /* Media Queries */
 
